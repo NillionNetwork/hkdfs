@@ -1,0 +1,42 @@
+[project]
+name = "hkdfs"
+version = "0.1.0"
+description = """\
+    HMAC-based key derivation function (HKDF) standalone implementation using \
+    pure Python.\
+    """
+license = "MIT"
+authors = [
+    {name = "Nillion"},
+    {email = "tech@nillion.com"}
+]
+readme = "README.rst"
+requires-python = ">=3.9"
+
+[project.urls]
+Repository = "https://github.com/nillionnetwork/hkdfs"
+
+[project.optional-dependencies]
+test = [
+    "pytest~=8.4",
+    "pytest-cov~=7.0"
+]
+lint = [
+    "pylint~=3.3"
+]
+coveralls = [
+    "coveralls~=4.0"
+]
+publish = [
+    "build~=1.3",
+    "twine~=4.0"
+]
+
+[build-system]
+requires = [
+    "setuptools>=77.0"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --cov=hkdfs --cov-report term-missing"
