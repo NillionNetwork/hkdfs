@@ -71,7 +71,10 @@ def hkdfs(
     :param length: Target length of output key.
     :param key: Pseudorandom key to expand.
     :param salt: Additional salt to incorporate during extraction.
-    :param info: Additional binary data to incorporate.
+    :param info: Additional binary data to incorporate during expansion.
+
+    The two non-optional arguments appear first to enable more concise
+    invocations.
 
     >>> hkdfs(1024, bytes([123])).hex()
     'bd54b22aa1447254436981928dc26b3bdce...393295e453c86663d613b2481b0c1184714'

@@ -4,11 +4,15 @@ hkdfs
 
 HMAC-based key derivation function (HKDF) standalone implementation using pure Python.
 
-|pypi| |coveralls|
+|pypi| |readthedocs| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/hkdfs.svg#
    :target: https://badge.fury.io/py/hkdfs
    :alt: PyPI version and link.
+
+.. |readthedocs| image:: https://readthedocs.org/projects/hkdfs/badge/?version=latest
+   :target: https://hkdfs.readthedocs.io/en/latest/?badge=latest
+   :alt: Read the Docs documentation status.
 
 .. |coveralls| image:: https://coveralls.io/repos/github/NillionNetwork/hkdfs/badge.svg?branch=main
    :target: https://coveralls.io/github/NillionNetwork/hkdfs?branch=main
@@ -46,11 +50,21 @@ A basic usage example is provided below:
 
 Development
 -----------
-All installation and development dependencies are fully specified in ``pyproject.toml``. The ``project.optional-dependencies`` object is used to `specify optional requirements <https://peps.python.org/pep-0621>`__ for various development tasks. This makes it possible to specify additional options (such as ``lint``) when performing installation using `pip <https://pypi.org/project/pip>`__:
+All installation and development dependencies are fully specified in ``pyproject.toml``. The ``project.optional-dependencies`` object is used to `specify optional requirements <https://peps.python.org/pep-0621>`__ for various development tasks. This makes it possible to specify additional options (such as ``docs``, ``lint``, and so on) when performing installation using `pip <https://pypi.org/project/pip>`__:
 
 .. code-block:: bash
 
-    python -m pip install ".[lint]"
+    python -m pip install ".[docs,lint]"
+
+Documentation
+^^^^^^^^^^^^^
+The documentation can be generated automatically from the source files using `Sphinx <https://www.sphinx-doc.org>`__:
+
+.. code-block:: bash
+
+    python -m pip install ".[docs]"
+    cd docs
+    sphinx-apidoc -f -E --templatedir=_templates -o _source .. && make html
 
 Testing and Conventions
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -88,7 +102,9 @@ The version number format for this library and the changes to the library associ
 
 Publishing
 ^^^^^^^^^^
-Ensure that the correct version number appears in ``pyproject.toml``. To publish the package, create and push a tag for the version being published (replacing ``?.?.?`` with the version number):
+Ensure that the correct version number appears in ``pyproject.toml``, and that any links in this README document to the Read the Docs documentation of this package (or its dependencies) have appropriate version numbers. Also ensure that the Read the Docs project for this library has an `automation rule <https://docs.readthedocs.io/en/stable/automation-rules.html>`__ that activates and sets as the default all tagged versions.
+
+To publish the package, create and push a tag for the version being published (replacing ``?.?.?`` with the version number):
 
 .. code-block:: bash
 

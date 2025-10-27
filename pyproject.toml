@@ -15,8 +15,15 @@ requires-python = ">=3.9"
 
 [project.urls]
 Repository = "https://github.com/nillionnetwork/hkdfs"
+Documentation = "https://hkdfs.readthedocs.io"
 
 [project.optional-dependencies]
+docs = [
+    "toml~=0.10.2",
+    "sphinx~=7.4",
+    "sphinx-rtd-theme~=3.0",
+    "sphinx-autodoc-typehints~=2.3"
+]
 test = [
     "pytest~=8.4",
     "pytest-cov~=7.0"
@@ -39,4 +46,4 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
-addopts = "--doctest-modules --cov=hkdfs --cov-report term-missing"
+addopts = "--doctest-modules --ignore=docs --cov=hkdfs --cov-report term-missing"
