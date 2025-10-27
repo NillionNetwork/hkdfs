@@ -4,7 +4,7 @@ hkdfs
 
 HMAC-based key derivation function (HKDF) standalone implementation using pure Python.
 
-|pypi| |readthedocs| |coveralls|
+|pypi| |readthedocs| |actions| |coveralls|
 
 .. |pypi| image:: https://badge.fury.io/py/hkdfs.svg#
    :target: https://badge.fury.io/py/hkdfs
@@ -13,6 +13,10 @@ HMAC-based key derivation function (HKDF) standalone implementation using pure P
 .. |readthedocs| image:: https://readthedocs.org/projects/hkdfs/badge/?version=latest
    :target: https://hkdfs.readthedocs.io/en/latest/?badge=latest
    :alt: Read the Docs documentation status.
+
+.. |actions| image:: https://github.com/nillionnetwork/hkdfs/workflows/lint-test-cover-docs/badge.svg#
+   :target: https://github.com/nillionnetwork/hkdfs/actions/workflows/lint-test-cover-docs.yml
+   :alt: GitHub Actions status.
 
 .. |coveralls| image:: https://coveralls.io/repos/github/NillionNetwork/hkdfs/badge.svg?branch=main
    :target: https://coveralls.io/github/NillionNetwork/hkdfs?branch=main
@@ -102,6 +106,8 @@ The version number format for this library and the changes to the library associ
 
 Publishing
 ^^^^^^^^^^
+This library can be published as a `package on PyPI <https://pypi.org/project/hkdfs>`__ via the GitHub Actions workflow found in ``.github/workflows/build-publish-sign-release.yml`` that follows the `recommendations found in the Python Packaging User Guide <https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/>`__.
+
 Ensure that the correct version number appears in ``pyproject.toml``, and that any links in this README document to the Read the Docs documentation of this package (or its dependencies) have appropriate version numbers. Also ensure that the Read the Docs project for this library has an `automation rule <https://docs.readthedocs.io/en/stable/automation-rules.html>`__ that activates and sets as the default all tagged versions.
 
 To publish the package, create and push a tag for the version being published (replacing ``?.?.?`` with the version number):
