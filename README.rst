@@ -49,7 +49,14 @@ A basic usage example is provided below:
 
 .. code-block:: python
 
-    >>> hkdfs(1024, bytes([1]), bytes([2]), bytes([3])).hex()[:73]
+    >>> import hashlib
+    >>> hkdfs(
+    ...     length=1024,
+    ...     key=bytes([1]),
+    ...     salt=bytes([2]),
+    ...     info=bytes([3]),
+    ...     hash=hashlib.sha512
+    ... ).hex()[:73]
     '1277a50c8cd05020dc073bd129cd84214270a0468e936c496fafee48c10a613a1a3b10fd2'
 
 Development
@@ -94,7 +101,7 @@ Style conventions are enforced using `Pylint <https://pylint.readthedocs.io>`__:
 
 Acknowledgments
 ^^^^^^^^^^^^^^^
-Materials consulted throughout the implementation of this library include `RFC 5869 <https://www.rfc-editor.org/rfc/rfc5869>`__ and the example implementation in the `Wikipedia article about the HKDF function <https://en.wikipedia.org/wiki/HKDF>`__.
+Materials consulted throughout the implementation of this library include `RFC 5869 <https://www.rfc-editor.org/rfc/rfc5869>`__, the example implementation in the `Wikipedia article about the HKDF function <https://en.wikipedia.org/wiki/HKDF>`__, and the source code of the `hkdf <https://pypi.org/project/hkdf/>`__ package.
 
 Contributions
 ^^^^^^^^^^^^^
