@@ -45,10 +45,12 @@ The library can be imported in the usual manner:
 
 Examples
 ^^^^^^^^
-A basic usage example is provided below:
+A few basic usage examples are provided below:
 
 .. code-block:: python
 
+    >>> hkdfs(128, bytes([123])).hex()[:73]
+    'bd54b22aa1447254436981928dc26b3bdce94772283d3d8a50ad1654745ca6be4e1b14127'
     >>> import hashlib
     >>> hkdfs(
     ...     length=1024,
